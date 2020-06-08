@@ -12,6 +12,7 @@ export class Server {
         this.app.use(express.static(path.resolve("./") + "/build/frontend"));
 
         this.app.get("/api", (req: Request, res: Response): void => {
+            res.sendStatus(201);
             res.send("You have reached the API!");
         });
 
