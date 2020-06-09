@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+:root {
+  font-size: 16px;
+
+  --transition-speed: 600ms;
+
+  --footer-height: 1.25rem;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100vh !important;
+  width: 100vw !important;
+  overflow: hidden
+}
+
+/* Large screens */
+@media (min-width: 576px) {
+  .mobileOnly {
+    display: none !important;
+  }
+
+  .App {
+    display: grid;
+    grid-template-columns: 4rem auto;
+    grid-template-rows: 42px auto var(--footer-height);
+
+    > nav {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+      overflow: hidden;
+    }
+
+    > .mainBreadCrumbs {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      //overflow: visible;
+    }
+
+    > .AppContent {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      overflow: hidden;
+    }
+
+    > footer {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      background-color: #e9ecef;
+    }
+  }
+}
+
+/* Small screens */
+@media only screen and (max-width: 575.98px) {
+  .desktopOnly {
+    display: none !important;
+  }
+
+  .App {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 4rem 42px auto var(--footer-height);
+
+    > nav {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      //z-index: 1030;
+      //overflow-y: hidden;
+    }
+
+    > .mainBreadCrumbs {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    > .AppContent {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+
+    > footer {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+      //background-color: #e9ecef;
+    }
+  }
+}
