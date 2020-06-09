@@ -6,10 +6,9 @@ function App() {
 	useEffect(() => {
 		fetch('/api')
 			.then(response => {
-				console.log(1, response);
-				// return response.json();
+				return response.json();
 			})
-			// .then(data => console.log(data));
+			.then(data => console.log(data));
 	});
 
 	return (
