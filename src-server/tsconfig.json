@@ -1,8 +1,12 @@
 {
   "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../build/src-server",
+    "rootDir": "."
+  },
   "references": [
     {
-      "path": "../src-common/tsconfig.json"
+      "path": "../src-common"
     }
   ]
 }

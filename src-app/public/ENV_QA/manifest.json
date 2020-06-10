@@ -1,6 +1,6 @@
 {
   "short_name": "TCS QA",
-  "name": "TransCom QA",
+  "name": "TestApp QA",
   "icons": [
     {
       "src": "../favicon.ico",

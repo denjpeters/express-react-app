@@ -1,6 +1,6 @@
 {
   "short_name": "TCS Demo",
-  "name": "TransCom Demo",
+  "name": "TestApp Demo",
   "icons": [
     {
       "src": "../favicon.ico",

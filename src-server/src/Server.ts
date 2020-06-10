@@ -2,7 +2,8 @@ import {Express, Request, Response} from "express";
 import express from "express";
 import * as path from "path";
 import bodyParser from "body-parser";
-import {testFunction} from "src-common/src/functionality";
+import {testFunction} from "../../src-common/src/functionality";
+import {stuffIt} from "../../src-common/src/more/stuff";
 
 export class Server {
     private app: Express;
@@ -13,6 +14,8 @@ export class Server {
         this.app.use(express.static(path.resolve("./") + "/build/src-app"));
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
+
+        stuffIt();
 
         this.app.post("/api", (req: Request, res: Response): void => {
             // res.sendStatus(202);

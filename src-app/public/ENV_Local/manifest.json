@@ -1,6 +1,6 @@
 {
   "short_name": "TCS Local",
-  "name": "TransCom Local",
+  "name": "TestApp Local",
   "icons": [
     {
       "src": "../favicon.ico",
