@@ -1,25 +1,8 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "baseUrl": "./",
-    "outDir": "../build",
-    "rootDir": "./",
-    "target": "es6",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "lib": [
-      "es6"
-    ],
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
+  "extends": "../tsconfig.json",
   "references": [
     {
-      "path": "../src-common"
+      "path": "../src-common/tsconfig.json"
     }
-  ],
-  "exclude": [
-    "**/node_modules"
   ]
 }
