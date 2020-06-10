@@ -14,5 +14,8 @@
     "start": "npx ts-node index.ts",
     "build": "npx tsc",
     "dev": "nodemon --watch './**/*.ts' --watch './../src-common/**.*.ts' --exec 'ts-node' index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13"
   }
 }
