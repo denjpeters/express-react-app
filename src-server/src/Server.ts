@@ -4,19 +4,26 @@ import * as path from "path";
 import bodyParser from "body-parser";
 import compression from "compression";
 import helmet from "helmet";
+import cors from "cors";
 import {testFunction} from "../../src-common/src/functionality";
+import {thingsRouter} from "./routes/things";
 
 export class Server {
     private app: Express;
+    private things;
 
     constructor(app: Express) {
         this.app = app;
+        this.things = thingsRouter;
 
         this.app.use(express.static(path.resolve("./") + "/build/src-app"));
+        this.app.use(cors());
+        this.app.use(compression());
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
-        this.app.use(compression());
         this.app.use(helmet());
+
+        app.use("/api/things", this.things);
 
         this.app.post("/api", (req: Request, res: Response): void => {
             testFunction();
