@@ -5,11 +5,15 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 import {thingsRouter} from "./src/routes/things";
-import {testFunction} from "../src-common/src/functionality";
+import {othersRouter} from "./src/routes/others";
+import {protectedRouter} from "./src/routes/protected";
+import {testMW} from "./src/middleware/testMW";
 
 const app = express();
 
 const port = 8080;
+
+const apiPrefix = "/api"
 
 app.use(express.static(path.resolve("./") + "/build/src-app"));
 app.use(cors());
@@ -18,14 +22,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(helmet());
 
-app.use("/api", thingsRouter);
+app.use(`${apiPrefix}/things`, thingsRouter);
+app.use(`${apiPrefix}/others`, othersRouter);
 
-app.post("/api", (req: Request, res: Response): void => {
-    testFunction();
+app.use(`${apiPrefix}`, testMW);
 
-    res.setHeader('Content-Type', 'application/json');
-    res.json({One: req.body.single, Two: 2, Three: "Tres"});
-});
+app.use(`${apiPrefix}/protected`, protectedRouter);
 
 app.get("*", (req: Request, res: Response): void => {
     res.sendFile(path.resolve("./") + "/build/src-app/index.html");

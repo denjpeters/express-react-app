@@ -1,16 +1,16 @@
 import express from "express";
 
-export const thingsRouter = express
+export const protectedRouter = express
     .Router();
 
-thingsRouter
+protectedRouter
     .route("/cars")
     .get((req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.json({Get: "Stuff"});
     });
 
-thingsRouter
+protectedRouter
     .route("/cars")
     .post((req, res) => {
         res.setHeader('Content-Type', 'application/json');

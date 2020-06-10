@@ -8,18 +8,21 @@ const App = () => {
 
     useEffect(() => {
         // axios.defaults.withCredentials = true;
-        axios.post('/api', {single: 3})
-            .then((response: any) => {
-                console.log("api", response.data);
-            });
-        axios.post('/api/things/cars', {single: 3})
+        axios.post('/api/others/cars', {single: 3})
             .then((response: any) => {
                 console.log("post", response.data);
+                console.log("post header", response.headers.intelliwake ?? "None");
             });
-        axios.get('/api/things/cars')
+        axios.get('/api/others/cars')
             .then((response: any) => {
-                console.log("get", response.data);
+                console.log("get data", response.data);
+                console.log("get header", response.headers.intelliwake ?? "None");
             });
+        // axios.get('/api/protected/cars')
+        //     .then((response: any) => {
+        //         console.log("get data", response.data);
+        //         console.log("get header", response.headers.intelliwake ?? "None");
+        //     });
     });
 
     return (
