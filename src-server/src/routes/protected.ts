@@ -7,12 +7,12 @@ protectedRouter
     .route("/cars")
     .get((req, res) => {
         res.setHeader('Content-Type', 'application/json');
-        res.json({Get: "Stuff"});
+        res.json({Get: "Protected Stuff"});
     });
 
 protectedRouter
     .route("/cars")
     .post((req, res) => {
         res.setHeader('Content-Type', 'application/json');
-        res.json({Post: "Stuff"});
+        res.json({Post: "Protected Stuff"});
     });

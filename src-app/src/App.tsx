@@ -18,11 +18,11 @@ const App = () => {
                 console.log("get data", response.data);
                 console.log("get header", response.headers.intelliwake ?? "None");
             });
-        // axios.get('/api/protected/cars')
-        //     .then((response: any) => {
-        //         console.log("get data", response.data);
-        //         console.log("get header", response.headers.intelliwake ?? "None");
-        //     });
+        axios.get('/api/protected/cars')
+            .then((response: any) => {
+                console.log("get data", response.data);
+                console.log("get header", response.headers.intelliwake ?? "None");
+            });
     });
 
     return (
