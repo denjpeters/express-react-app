@@ -1,21 +1,21 @@
 {
   "name": "express-react-app",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:Dirk94/express-react-app.git",
-  "author": "Dirk Hoekstra <dirkhoekstra@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@types/express": "^4.17.2",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.4",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.7.4"
-  },
+  "private": true,
+  "workspaces": [
+    "src-common",
+    "src-app",
+    "src-server"
+  ],
   "scripts": {
-    "start": "npx ts-node index.ts",
-    "build": "npx tsc",
-    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts"
+    "server": "yarn workspace src-server dev",
+    "app": "yarn workspace src-app start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn app\"",
+    "build": "rm -rf ./build/* && yarn workspace src-app run build && yarn workspace src-server run build",
+    "buildzzz": "rm -rf ./build/* && yarn workspace src-common run build && yarn workspace src-app run build && yarn workspace src-server run build",
+    "build:run": "yarn build && node build/src-server"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
   }
 }
