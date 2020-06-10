@@ -6,5 +6,13 @@
     "src-common",
     "src-app",
     "src-server"
-  ]
+  ],
+  "scripts": {
+    "server": "yarn workspace src-server start",
+    "app": "yarn workspace src-app start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn app\""
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
 }
