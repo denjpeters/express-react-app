@@ -1,6 +1,7 @@
 {
   "name": "src-app",
   "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
