@@ -8,6 +8,10 @@ const App = () => {
 
     useEffect(() => {
         // axios.defaults.withCredentials = true;
+        axios.post('/api', {single: 3})
+            .then((response: any) => {
+                console.log("api", response.data);
+            });
         axios.post('/api/things/cars', {single: 3})
             .then((response: any) => {
                 console.log("post", response.data);

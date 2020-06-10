@@ -4,7 +4,7 @@ export const thingsRouter = express
     .Router();
 
 thingsRouter
-    .route("/cars")
+    .route("/things/cars")
     .get((req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.json({Get: "Stuff"});
