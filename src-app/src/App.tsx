@@ -50,7 +50,7 @@ const App = () => {
                 console.log("post header", JSON.parse(response.headers.intelliwake ?? "{}"));
             });
 
-        axios.get('/api/protected/cars')
+        axios.get('/api/protected/cars', config)
             .then((response: any) => {
                 console.log("get data", response.data);
                 console.log("get header", JSON.parse(response.headers.intelliwake ?? "{}"));
