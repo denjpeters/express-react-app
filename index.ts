@@ -1,4 +1,4 @@
-import {Server} from "./server/Server";
+import {Server} from "./src/server/Server";
 import express from 'express';
 const app = express();
 
