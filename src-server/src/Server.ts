@@ -2,8 +2,9 @@ import {Express, Request, Response} from "express";
 import express from "express";
 import * as path from "path";
 import bodyParser from "body-parser";
+import compression from "compression";
+import helmet from "helmet";
 import {testFunction} from "../../src-common/src/functionality";
-import {stuffIt} from "../../src-common/src/more/stuff";
 
 export class Server {
     private app: Express;
@@ -14,13 +15,10 @@ export class Server {
         this.app.use(express.static(path.resolve("./") + "/build/src-app"));
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
-
-        stuffIt();
+        this.app.use(compression());
+        this.app.use(helmet());
 
         this.app.post("/api", (req: Request, res: Response): void => {
-            // res.sendStatus(202);
-            // res.send("You have reached the API!");
-            // console.log(req.body);
             testFunction();
 
             res.setHeader('Content-Type', 'application/json');
