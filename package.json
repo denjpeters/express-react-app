@@ -11,7 +11,7 @@
     "server": "yarn workspace src-server dev",
     "app": "yarn workspace src-app start",
     "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn app\"",
-    "build": "rm -rf ./build/* && yarn workspace src-app run build && yarn workspace src-server run build",
+    "build": "rm -rf ./build/* && yarn workspace src-common run build && yarn workspace src-app run build && yarn workspace src-server run build",
     "build:run": "yarn build && node build"
   },
   "dependencies": {
