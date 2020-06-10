@@ -1,5 +1,6 @@
 import express from "express";
 import mysql from "mysql";
+import util from "util";
 
 export const protectedRouter = express
     .Router();
@@ -7,9 +8,8 @@ export const protectedRouter = express
 protectedRouter
     .route("/cars")
     .get((req, res) => {
-        res.setHeader('Content-Type', 'application/json');
-
-        const connection = mysql.createConnection({
+        const pool = mysql.createPool({
+            connectionLimit: 10,
             host: 'localhost',
             port: 3311,
             user: 'admin',
@@ -17,11 +17,16 @@ protectedRouter
             database: 'transcom-app-local'
         });
 
-        connection.connect();
+        pool.query = util.promisify(pool.query);
 
-        connection.query('SELECT * FROM NCCIBody', (err, rows, fields) => {
-            if (err) throw err;
+        pool.query('SELECT * FROM NCCIBodyZ', (err, rows, fields) => {
+            if (err) {
 
+                res.sendStatus(401);
+                // throw err;
+            }
+
+            res.setHeader('Content-Type', 'application/json');
             res.json({rows: rows, fields: fields});
         })
 
