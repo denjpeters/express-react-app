@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import './App.scss';
 import axios from "axios";
-// import {testFunction} from "../../common/functionality";
+import {testFunction} from "src-common/functionality";
 
 const App = () => {
-    // testFunction();
+    testFunction()
 
     useEffect(() => {
         // axios.defaults.withCredentials = true;
