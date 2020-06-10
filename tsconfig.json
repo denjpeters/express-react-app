@@ -14,6 +14,6 @@
     "**.ts"
   ],
   "exclude": [
-    "./src/app"
+    "./src-app"
   ]
 }
