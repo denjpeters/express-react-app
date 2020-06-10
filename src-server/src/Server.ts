@@ -2,7 +2,7 @@ import {Express, Request, Response} from "express";
 import express from "express";
 import * as path from "path";
 import bodyParser from "body-parser";
-// import {testFunction} from "src-common/src/functionality";
+import {testFunction} from "src-common/src/functionality";
 
 export class Server {
     private app: Express;
@@ -18,7 +18,7 @@ export class Server {
             // res.sendStatus(202);
             // res.send("You have reached the API!");
             // console.log(req.body);
-            // testFunction();
+            testFunction();
 
             res.setHeader('Content-Type', 'application/json');
             res.json({One: req.body.single, Two: 2, Three: "Tres"});
