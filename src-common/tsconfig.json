@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "baseUrl": "./",
-    "outDir": "../build",
+    "outDir": "../build/src-common/src",
     "target": "es6",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -13,6 +13,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
+  "include": [
+    "src"
+  ],
   "exclude": [
     "**/node_modules"
   ]
