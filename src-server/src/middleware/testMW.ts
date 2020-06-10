@@ -1,7 +1,11 @@
 export const testMW = (req, res, next) => {
-    const authorization = JSON.parse(req.headers.authorization ?? {});
+    const authorization = JSON.parse(req.headers.authorization ?? "{}");
 
-    res.setHeader("intelliwake", JSON.stringify({token: authorization.device_token ?? "nf"}));
+    if (!!authorization.device_token) {
+        res.setHeader("intelliwake", JSON.stringify({token: authorization.device_token ?? "nf"}));
 
-    next();
+        next();
+    } else {
+        res.sendStatus(401);
+    }
 }
