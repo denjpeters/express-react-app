@@ -2,7 +2,7 @@ import {Express, Request, Response} from "express";
 import express from "express";
 import * as path from "path";
 import bodyParser from "body-parser";
-import {testFunction} from "src-common/functionality";
+import {testFunction} from "src-common/src/functionality";
 
 export class Server {
     private app: Express;
