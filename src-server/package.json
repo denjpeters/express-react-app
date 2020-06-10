@@ -13,6 +13,6 @@
   "scripts": {
     "start": "npx ts-node index.ts",
     "build": "npx tsc",
-    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts"
+    "dev": "nodemon --watch './**/*.ts' --watch './../src-common/**.*.ts' --exec 'ts-node' index.ts"
   }
 }
