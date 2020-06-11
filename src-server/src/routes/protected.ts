@@ -7,7 +7,7 @@ export const protectedRouter = express
 protectedRouter
     .route("/cars")
     .post((req: Request, res: Response) => {
-        query('SELECT * FROM NCCIBody where ID <= ?', [10])
+        query('SELECT * FROM NCCIBody where ID <= :bodyID AND IsActive = :isActive', {bodyID: 10, isActive: 1})
             .then((data: any) => {
                 res.setHeader('Content-Type', 'application/json');
                 res.json(data);
