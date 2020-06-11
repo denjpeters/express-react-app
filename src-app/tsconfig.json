@@ -21,17 +21,7 @@
     "strict": true,
     "noEmit": true
   },
-  "references": [
-    {
-      "path": "../src-common"
-    }
-  ],
   "include": [
     "src"
-  ],
-  "paths": {
-    "src-common": [
-      "src-common/index"
-    ]
-  }
+  ]
 }

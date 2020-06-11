@@ -11,16 +11,6 @@ export const databasePool = mysql.createPool({
 });
 
 // export const query = util.promisify(databasePool.query);
-// databasePool.query = util.promisify(
-//     (err, rows, fields) => databasePool.query(
-//         rows,
-//         fields,
-//         (err, ...results) => cb(err, results)
-//     ));
-
-// function isPlainObject(input) {
-//     return !!input && !Array.isArray(input) && typeof input === 'object';
-// }
 
 export const query = async (sql: string, values?: object | []): Promise<any> => {
     return await new Promise((resolve, reject) => {

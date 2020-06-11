@@ -21,10 +21,5 @@
     "noUnusedParameters": false,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-  },
-  "references": [
-    {
-      "path": "../src-common"
-    }
-  ]
+  }
 }

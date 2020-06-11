@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "src-common",
     "src-app",
     "src-server"
   ],
@@ -12,7 +11,6 @@
     "app": "yarn workspace src-app start",
     "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn app\"",
     "build": "rm -rf ./build/* && yarn workspace src-app run build && yarn workspace src-server run build",
-    "buildzzz": "rm -rf ./build/* && yarn workspace src-common run build && yarn workspace src-app run build && yarn workspace src-server run build",
     "build:run": "yarn build && node build/src-server"
   },
   "dependencies": {

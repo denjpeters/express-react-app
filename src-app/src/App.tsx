@@ -1,12 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.scss';
 import axios from "axios";
-import {testFunction} from "src-common/dist/src-common";
 
 const App = () => {
     useEffect(() => {
-        // namedItemResolution('Test id = :id and active = :active', {id: 2, active: 1});
-        testFunction();
 
         // axios.defaults.withCredentials = true;
         // axios.post('/api/others/cars', {single: 3})
