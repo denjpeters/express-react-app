@@ -8,12 +8,15 @@ import {thingsRouter} from "./src/routes/things";
 import {othersRouter} from "./src/routes/others";
 import {protectedRouter} from "./src/routes/protected";
 import {testMW} from "./src/middleware/testMW";
+import {testFunction} from "../src-common/src/functionality";
 
 const app = express();
 
 const port = 8080;
 
 const apiPrefix = "/api"
+
+testFunction();
 
 app.use(express.static(path.resolve("./") + "/build/src-app"));
 app.use(cors());
