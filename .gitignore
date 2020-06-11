@@ -33,3 +33,4 @@ yarn-error.log*
 # Docker
 /Docker/Data/*
 .npmrc
+.yarnrc
