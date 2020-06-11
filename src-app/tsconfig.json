@@ -1,11 +1,9 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
     "target": "es5",
-    "outDir": "../build/src-app",
-    "rootDir": ".",
     "lib": [
-      "es6",
       "dom",
       "dom.iterable",
       "esnext"
@@ -18,16 +16,16 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
     "isolatedModules": true,
-    "strict": true
+    "strict": true,
+    "noEmit": true
   },
-  "include": [
-    "src"
-  ],
   "references": [
     {
       "path": "../src-common"
     }
+  ],
+  "include": [
+    "src"
   ]
 }

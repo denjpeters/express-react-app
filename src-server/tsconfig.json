@@ -1,8 +1,26 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../build/src-server",
-    "rootDir": "."
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": [
+      "es6",
+      "esnext"
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
   },
   "references": [
     {

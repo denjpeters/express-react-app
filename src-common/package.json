@@ -1,6 +1,7 @@
 {
   "name": "src-common",
   "version": "1.0.0",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "ts-loader": "^7.0.5",
