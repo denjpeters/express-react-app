@@ -10,7 +10,9 @@ export const databasePool = mysql.createPool({
     database: 'transcom-app-local'
 });
 
-export const query = async (sql: string, values?: any): Promise<{ rows: Array<any>, fields: FieldInfo[] | undefined }> => {
+export type TQueryResults<T> = {rows: Array<T> | undefined, fields: FieldInfo[] | undefined, insertId: number | undefined}
+
+export const query = async <T>(sql: string, values?: any): Promise<TQueryResults<T>> => {
     return await new Promise((resolve, reject) => {
         if (!!values && isObject(values)) {
             let newSQL = sql;
@@ -35,7 +37,7 @@ export const query = async (sql: string, values?: any): Promise<{ rows: Array<an
                 if (err) {
                     reject(err);
                 } else {
-                    resolve({rows: rows, fields: fields});
+                    resolve(rows);
                 }
             });
         } else {
@@ -43,7 +45,7 @@ export const query = async (sql: string, values?: any): Promise<{ rows: Array<an
                 if (err) {
                     reject(err);
                 } else {
-                    resolve({rows: rows, fields: fields});
+                    resolve(rows);
                 }
             });
         }

@@ -8,7 +8,7 @@ protectedRouter
     .route("/cars")
     .post((req: Request, res: Response) => {
         query('SELECT * FROM NCCIBody where ID <= :bodyID AND IsActive = :isActive', {bodyID: 10, isActive: 1})
-            .then((data: any) => {
+            .then((data: any) => { // {rows}
                 res.setHeader('Content-Type', 'application/json');
                 res.json(data);
             })
