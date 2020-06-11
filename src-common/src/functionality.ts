@@ -1,6 +1,6 @@
 
 export const testFunction = () => {
-    console.log('Test function, again');
+    console.log('Test function, again!!');
 }
 
 export const isPlainObject = (value: any) => {

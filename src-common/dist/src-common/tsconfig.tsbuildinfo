@@ -197,7 +197,7 @@
         "affectsGlobalScope": true
       },
       "../../src/functionality.ts": {
-        "version": "54d4ed3f49bc4124e054d7bda021e9a674ca2b5116f3f9f938283b3073486af7",
+        "version": "ef8c4b751b9756c0cef17553dec371ba87b40e791be6b11abf07f04e1effeb68",
         "signature": "f0f982c956d8836a133ab113986ea0f82d86423d1bebef1747af2eab5fbe02c5",
         "affectsGlobalScope": false
       },

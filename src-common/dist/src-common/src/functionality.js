@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.testFunction2 = exports.isPlainObject = exports.testFunction = void 0;
 exports.testFunction = () => {
-    console.log('Test function, again');
+    console.log('Test function, again!!');
 };
 exports.isPlainObject = (value) => {
     return !!value && !Array.isArray(value) && typeof value === 'object';
