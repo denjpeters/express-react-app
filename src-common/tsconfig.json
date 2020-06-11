@@ -6,6 +6,10 @@
     "moduleResolution": "node",
     "composite": true,
     "esModuleInterop": true,
+    "outDir": "dist",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "declaration": true,
     "lib": [
       "es6",
       "esnext"
@@ -20,6 +24,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   }
 }
