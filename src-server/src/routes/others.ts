@@ -1,18 +1,18 @@
-import express from "express";
+import express, {Request, Response} from "express";
 
 export const othersRouter = express
     .Router();
 
 othersRouter
     .route("/cars")
-    .get((req, res) => {
+    .get((req: Request, res: Response) => {
         res.setHeader('Content-Type', 'application/json');
         res.json({Get: "Stuff3"});
     });
 
 othersRouter
     .route("/cars")
-    .post((req, res) => {
+    .post((req: Request, res: Response) => {
         res.setHeader('Content-Type', 'application/json');
         res.json({Post: "Stuff"});
     });

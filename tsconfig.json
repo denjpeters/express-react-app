@@ -11,9 +11,14 @@
     ],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
-  "exclude": [
-    "**/node_modules"
-  ]
+    "skipLibCheck": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true
+  }
 }

@@ -10,7 +10,7 @@ export const databasePool = mysql.createPool({
     database: 'transcom-app-local'
 });
 
-// databasePool.query = util.promisify(databasePool.query);
+// export const query = util.promisify(databasePool.query);
 // databasePool.query = util.promisify(
 //     (err, rows, fields) => databasePool.query(
 //         rows,
@@ -18,11 +18,11 @@ export const databasePool = mysql.createPool({
 //         (err, ...results) => cb(err, results)
 //     ));
 
-function isPlainObject(input) {
-    return !!input && !Array.isArray(input) && typeof input === 'object';
-}
+// function isPlainObject(input) {
+//     return !!input && !Array.isArray(input) && typeof input === 'object';
+// }
 
-databasePool.queryParms = async (sql: string, values?: object | []): Promise<any> => {
+export const query = async (sql: string, values?: object | []): Promise<any> => {
     return await new Promise((resolve, reject) => {
         if (!values) {
             databasePool.query(sql, values, (err, rows, fields) => {
@@ -36,14 +36,14 @@ databasePool.queryParms = async (sql: string, values?: object | []): Promise<any
             return;
         }
 
-        let newSQL = sql;
-        let newValues = values;
+        // let newSQL = sql;
+        // let newValues = values;
 
         // if (isPlainObject(values)) {
         //     while (const pos = newSQL.search(':'))
         // }
 
-        databasePool.query(newSQL, newValues, (err, rows, fields) => {
+        databasePool.query(sql, values, (err, rows, fields) => {
             if (err) {
                 reject(err);
             } else {
