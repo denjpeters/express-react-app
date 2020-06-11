@@ -1,15 +1,5 @@
 {
   "name": "src-common",
   "version": "1.0.0",
-  "main": "index.js",
-  "private": true,
-  "dependencies": {
-    "@types/webpack": "^4.41.17",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.7.4",
-    "webpack": "^4.43.0"
-  },
-  "scripts": {
-    "build": "npx tsc"
-  }
+  "private": true
 }
